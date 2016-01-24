@@ -2,7 +2,7 @@
 ## functions do 
 
 ################################################################################  
-#   The fist function makeCacheMatrix creates a special vector which
+#   The first function makeCacheMatrix creates a special vector which
 #   has functions as its elements. These functions set, get and setinv, getinv
 #   This function can be thought of as a class in c++. It enapsulates the data
 #   and has functions set and get the data. This enables caching the results of 
@@ -15,6 +15,9 @@
 ################################################################################
 
 ##  Write a short comment describing this function
+
+################################################################################
+# Function: makeCacheMatrix
 #   This function implments the functions that make the data persistent.
 #   It uses the special assigment operator <<- to achieve this
 #   Input: a matrix that can be inverted. It doesn't check whether the matrix is invertable
@@ -57,6 +60,10 @@ makeCacheMatrix <- function(x = matrix()) {
 # Function: cacheSolve. This function calculates the inverse of the special matrix
 #           created using makeCacheMatrix. This function before calculating checks 
 #           whether inverse is already computed for the given matrix. 
+# Input: a special matrix created using makeCacheMatrix function. 
+# Output: Inverted matrix from cache if exists; otherwise create it by calling solve
+#         function and caches it for future use.
+################################################################################
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
